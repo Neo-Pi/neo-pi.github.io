@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
-    Create a Jeklly Blog - NeoPi Blog
+    Build RISCV Toolchain - NeoPi Blog
     
   </title>
 
-  <meta name="description" content="Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1">
+  <meta name="description" content="Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1 💾DISK:Case-sensitive (Very Important)">
 
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -20,7 +20,7 @@
   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2022/11/12/Jeklly.html">
+  <link rel="canonical" href="http://localhost:4000/2022/11/12/RISCV-Toolchain.html">
   <link rel="alternate" type="application/rss+xml" title="NeoPi Blog" href="/feed.xml">
 
 </head>
@@ -65,9 +65,9 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Create a Jeklly Blog</h1>
+            <h1>Build RISCV Toolchain</h1>
             
-            <h2 class="subheading">How to create a Jeklly Blog?</h2>
+            <h2 class="subheading">build riscv toolchain in macos m1</h2>
             
             <span class="meta">Posted by
               <a href="#">Neo Pi</a>
@@ -88,7 +88,8 @@
 
         <h2 id="environment">Environment</h2>
 <p>💻OS: MacOS 13.0<br />
-🔨ARCH: Apple M1</p>
+🔨ARCH: Apple M1<br />
+💾DISK:<strong>Case-sensitive</strong> (Very Important)</p>
 
 <h2 id="install-homebrew">Install Homebrew</h2>
 <p>国内源</p>
@@ -97,31 +98,19 @@
 <p>官方源</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 </code></pre></div></div>
-
-<h2 id="install-ruby">Install Ruby</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-brew install ruby
+<h2 id="install-environment">Install Environment</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat texinfo
+$ brew tap discoteq/discoteq
+$ brew install flock
 </code></pre></div></div>
-<p>Check It</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -v
-ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin22]
+<p><strong>!!!Add texinfo in your PATH</strong></p>
+<h2 id="config-toolchain">Config Toolchain</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir /opt/riscv64
+$ ./configure --enable-multilib --prefix=/opt/riscv64
 </code></pre></div></div>
-
-<h2 id="install-jekyll">Install Jekyll</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install bundler
-sudo gem install -n /usr/local/bin/ jekyll
+<h2 id="build-toolchain">Build Toolchain</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ make install -j8
 </code></pre></div></div>
-<h2 id="chose-your-blog-theme">Chose your blog theme</h2>
-<p>All in <a href="http://jekyllthemes.org/">Jekyll Theme</a>
-Clone the jekyll repository</p>
-
-<h2 id="run-jekyll-to-emulation">Run Jekyll to emulation</h2>
-<p>Config the “__config.yml” file<br />
-And run Jekyll</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
-</code></pre></div></div>
-<p>Then you can view in “http://127.0.0.1:4000”</p>
 
 
         <hr>
@@ -129,9 +118,9 @@ And run Jekyll</p>
         <div class="clearfix">
 
           
+          <a class="btn btn-primary float-left" href="/2022/11/12/Jeklly.html" data-toggle="tooltip" data-placement="top" title="Create a Jeklly Blog">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
           
-          <a class="btn btn-primary float-right" href="/2022/11/12/RISCV-Toolchain.html" data-toggle="tooltip" data-placement="top" title="Build RISCV Toolchain">Next<span class="d-none d-md-inline">
-              Post</span> &rarr;</a>
           
 
         </div>

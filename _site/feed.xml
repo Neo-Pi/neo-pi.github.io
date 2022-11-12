@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-12T16:43:49+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NeoPi Blog</title><subtitle>Welcom to my blog</subtitle><author><name>Neo Pi</name></author><entry><title type="html">Create a Jeklly Blog</title><link href="http://localhost:4000/2022/11/12/Jeklly.html" rel="alternate" type="text/html" title="Create a Jeklly Blog" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/Jeklly</id><content type="html" xml:base="http://localhost:4000/2022/11/12/Jeklly.html">&lt;h2 id=&quot;environment&quot;&gt;Environment&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-12T17:13:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NeoPi Blog</title><subtitle>Welcom to my blog</subtitle><author><name>Neo Pi</name></author><entry><title type="html">Create a Jeklly Blog</title><link href="http://localhost:4000/2022/11/12/Jeklly.html" rel="alternate" type="text/html" title="Create a Jeklly Blog" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/Jeklly</id><content type="html" xml:base="http://localhost:4000/2022/11/12/Jeklly.html">&lt;h2 id=&quot;environment&quot;&gt;Environment&lt;/h2&gt;
 &lt;p&gt;💻OS: MacOS 13.0&lt;br /&gt;
 🔨ARCH: Apple M1&lt;/p&gt;
 
@@ -33,4 +33,28 @@ Clone the jekyll repository&lt;/p&gt;
 And run Jekyll&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Then you can view in “http://127.0.0.1:4000”&lt;/p&gt;</content><author><name>Neo Pi</name></author><summary type="html">Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1</summary></entry></feed>
+&lt;p&gt;Then you can view in “http://127.0.0.1:4000”&lt;/p&gt;</content><author><name>Neo Pi</name></author><summary type="html">Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1</summary></entry><entry><title type="html">Build RISCV Toolchain</title><link href="http://localhost:4000/2022/11/12/RISCV-Toolchain.html" rel="alternate" type="text/html" title="Build RISCV Toolchain" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/RISCV%20Toolchain</id><content type="html" xml:base="http://localhost:4000/2022/11/12/RISCV-Toolchain.html">&lt;h2 id=&quot;environment&quot;&gt;Environment&lt;/h2&gt;
+&lt;p&gt;💻OS: MacOS 13.0&lt;br /&gt;
+🔨ARCH: Apple M1&lt;br /&gt;
+💾DISK:&lt;strong&gt;Case-sensitive&lt;/strong&gt; (Very Important)&lt;/p&gt;
+
+&lt;h2 id=&quot;install-homebrew&quot;&gt;Install Homebrew&lt;/h2&gt;
+&lt;p&gt;国内源&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;官方源&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;install-environment&quot;&gt;Install Environment&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat texinfo
+$ brew tap discoteq/discoteq
+$ brew install flock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;!!!Add texinfo in your PATH&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;config-toolchain&quot;&gt;Config Toolchain&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkdir /opt/riscv64
+$ ./configure --enable-multilib --prefix=/opt/riscv64
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;build-toolchain&quot;&gt;Build Toolchain&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ make install -j8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Neo Pi</name></author><summary type="html">Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1 💾DISK:Case-sensitive (Very Important)</summary></entry></feed>
