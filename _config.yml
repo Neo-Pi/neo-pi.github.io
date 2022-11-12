@@ -1,0 +1,25 @@
+title:              NeoPi Blog
+email:              neopimail@gmail.com
+description:        Welcom to my blog
+author:             Neo Pi
+baseurl:            
+url:                "https://neo-pi.github.io"
+
+# Social Profiles
+twitter_username:   NeeoPi
+github_username:    neo-pi
+facebook_username:  null
+instagram_username:  null
+linkedin_username:  null
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+
+# Build settings
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site

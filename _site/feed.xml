@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-12T16:43:49+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NeoPi Blog</title><subtitle>Welcom to my blog</subtitle><author><name>Neo Pi</name></author><entry><title type="html">Create a Jeklly Blog</title><link href="http://localhost:4000/2022/11/12/Jeklly.html" rel="alternate" type="text/html" title="Create a Jeklly Blog" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/Jeklly</id><content type="html" xml:base="http://localhost:4000/2022/11/12/Jeklly.html">&lt;h2 id=&quot;environment&quot;&gt;Environment&lt;/h2&gt;
+&lt;p&gt;💻OS: MacOS 13.0&lt;br /&gt;
+🔨ARCH: Apple M1&lt;/p&gt;
+
+&lt;h2 id=&quot;install-homebrew&quot;&gt;Install Homebrew&lt;/h2&gt;
+&lt;p&gt;国内源&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;官方源&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;install-ruby&quot;&gt;Install Ruby&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+
+brew install ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Check It&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby -v
+ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin22]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;install-jekyll&quot;&gt;Install Jekyll&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install bundler
+sudo gem install -n /usr/local/bin/ jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;chose-your-blog-theme&quot;&gt;Chose your blog theme&lt;/h2&gt;
+&lt;p&gt;All in &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Theme&lt;/a&gt;
+Clone the jekyll repository&lt;/p&gt;
+
+&lt;h2 id=&quot;run-jekyll-to-emulation&quot;&gt;Run Jekyll to emulation&lt;/h2&gt;
+&lt;p&gt;Config the “__config.yml” file&lt;br /&gt;
+And run Jekyll&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Then you can view in “http://127.0.0.1:4000”&lt;/p&gt;</content><author><name>Neo Pi</name></author><summary type="html">Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1</summary></entry></feed>
