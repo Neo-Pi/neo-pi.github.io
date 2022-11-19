@@ -1,60 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-12T17:13:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NeoPi Blog</title><subtitle>Welcom to my blog</subtitle><author><name>Neo Pi</name></author><entry><title type="html">Create a Jeklly Blog</title><link href="http://localhost:4000/2022/11/12/Jeklly.html" rel="alternate" type="text/html" title="Create a Jeklly Blog" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/Jeklly</id><content type="html" xml:base="http://localhost:4000/2022/11/12/Jeklly.html">&lt;h2 id=&quot;environment&quot;&gt;Environment&lt;/h2&gt;
-&lt;p&gt;💻OS: MacOS 13.0&lt;br /&gt;
-🔨ARCH: Apple M1&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-19T12:13:34+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NeoPi Blog</title><subtitle>Welcom to my blog</subtitle><author><name>Neo Pi</name></author><entry><title type="html">Create a Jeklly Blog</title><link href="http://localhost:4000/2022/11/12/Jeklly.html" rel="alternate" type="text/html" title="Create a Jeklly Blog" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/Jeklly</id><content type="html" xml:base="http://localhost:4000/2022/11/12/Jeklly.html"><![CDATA[<h2 id="environment">Environment</h2>
+<p>💻OS: MacOS 13.0<br />
+🔨ARCH: Apple M1</p>
 
-&lt;h2 id=&quot;install-homebrew&quot;&gt;Install Homebrew&lt;/h2&gt;
-&lt;p&gt;国内源&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;官方源&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<h2 id="install-homebrew">Install Homebrew</h2>
+<p>国内源</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+</code></pre></div></div>
+<p>官方源</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</code></pre></div></div>
 
-&lt;h2 id=&quot;install-ruby&quot;&gt;Install Ruby&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<h2 id="install-ruby">Install Ruby</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install ruby
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Check It&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby -v
+</code></pre></div></div>
+<p>Check It</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -v
 ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin22]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;h2 id=&quot;install-jekyll&quot;&gt;Install Jekyll&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install bundler
+<h2 id="install-jekyll">Install Jekyll</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install bundler
 sudo gem install -n /usr/local/bin/ jekyll
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;chose-your-blog-theme&quot;&gt;Chose your blog theme&lt;/h2&gt;
-&lt;p&gt;All in &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Theme&lt;/a&gt;
-Clone the jekyll repository&lt;/p&gt;
+</code></pre></div></div>
+<h2 id="chose-your-blog-theme">Chose your blog theme</h2>
+<p>All in <a href="http://jekyllthemes.org/">Jekyll Theme</a>
+Clone the jekyll repository</p>
 
-&lt;h2 id=&quot;run-jekyll-to-emulation&quot;&gt;Run Jekyll to emulation&lt;/h2&gt;
-&lt;p&gt;Config the “__config.yml” file&lt;br /&gt;
-And run Jekyll&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Then you can view in “http://127.0.0.1:4000”&lt;/p&gt;</content><author><name>Neo Pi</name></author><summary type="html">Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1</summary></entry><entry><title type="html">Build RISCV Toolchain</title><link href="http://localhost:4000/2022/11/12/RISCV-Toolchain.html" rel="alternate" type="text/html" title="Build RISCV Toolchain" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/RISCV%20Toolchain</id><content type="html" xml:base="http://localhost:4000/2022/11/12/RISCV-Toolchain.html">&lt;h2 id=&quot;environment&quot;&gt;Environment&lt;/h2&gt;
-&lt;p&gt;💻OS: MacOS 13.0&lt;br /&gt;
-🔨ARCH: Apple M1&lt;br /&gt;
-💾DISK:&lt;strong&gt;Case-sensitive&lt;/strong&gt; (Very Important)&lt;/p&gt;
+<h2 id="run-jekyll-to-emulation">Run Jekyll to emulation</h2>
+<p>Config the “__config.yml” file<br />
+And run Jekyll</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div></div>
+<p>Then you can view in “http://127.0.0.1:4000”</p>]]></content><author><name>Neo Pi</name></author><summary type="html"><![CDATA[Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1]]></summary></entry><entry><title type="html">Build RISCV Toolchain</title><link href="http://localhost:4000/2022/11/12/RISCV-Toolchain.html" rel="alternate" type="text/html" title="Build RISCV Toolchain" /><published>2022-11-12T00:00:00+08:00</published><updated>2022-11-12T00:00:00+08:00</updated><id>http://localhost:4000/2022/11/12/RISCV%20Toolchain</id><content type="html" xml:base="http://localhost:4000/2022/11/12/RISCV-Toolchain.html"><![CDATA[<h2 id="environment">Environment</h2>
+<p>💻OS: MacOS 13.0<br />
+🔨ARCH: Apple M1<br />
+💾DISK:<strong>Case-sensitive</strong> (Very Important)</p>
 
-&lt;h2 id=&quot;install-homebrew&quot;&gt;Install Homebrew&lt;/h2&gt;
-&lt;p&gt;国内源&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;官方源&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/bin/zsh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;install-environment&quot;&gt;Install Environment&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat texinfo
+<h2 id="install-homebrew">Install Homebrew</h2>
+<p>国内源</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+</code></pre></div></div>
+<p>官方源</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</code></pre></div></div>
+<h2 id="install-environment">Install Environment</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat texinfo
 $ brew tap discoteq/discoteq
 $ brew install flock
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;!!!Add texinfo in your PATH&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;config-toolchain&quot;&gt;Config Toolchain&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkdir /opt/riscv64
+</code></pre></div></div>
+<p><strong>!!!Add texinfo in your PATH</strong></p>
+<h2 id="config-toolchain">Config Toolchain</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir /opt/riscv64
 $ ./configure --enable-multilib --prefix=/opt/riscv64
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;build-toolchain&quot;&gt;Build Toolchain&lt;/h2&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ make install -j8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Neo Pi</name></author><summary type="html">Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1 💾DISK:Case-sensitive (Very Important)</summary></entry></feed>
+</code></pre></div></div>
+<h2 id="build-toolchain">Build Toolchain</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ make install -j8
+</code></pre></div></div>]]></content><author><name>Neo Pi</name></author><summary type="html"><![CDATA[Environment 💻OS: MacOS 13.0 🔨ARCH: Apple M1 💾DISK:Case-sensitive (Very Important)]]></summary></entry></feed>
