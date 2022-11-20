@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "RISC-V 汇编速查手册"
-subtitle: "收集整理了一些常用的汇编指令"
+title: "RISC-V 编程速查手册"
+subtitle: "收集整理了一些常用的指令以及常用的ToolChain选项"
 background: '/img/posts/01.jpg'
 ---
 
@@ -11,7 +11,7 @@ background: '/img/posts/01.jpg'
 
 ## 目录
 
-[TOC]
+[toc]
 
 ## 1.C语言
 
