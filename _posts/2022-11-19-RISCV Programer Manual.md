@@ -3,6 +3,7 @@ layout: post
 title: "RISC-V 编程速查手册"
 subtitle: "收集整理了一些常用的指令以及常用的ToolChain选项"
 background: '/img/posts/01.jpg'
+
 ---
 
 ## RISCV编程速查手册
@@ -200,7 +201,7 @@ background: '/img/posts/01.jpg'
 
 | 类型 | 描述            | 包含指令                                                     |
 | ---- | --------------- | ------------------------------------------------------------ |
-| R型  | 算术指令格式    | add\sub\sll\xor\srl\sra\or\and\lr.d\sc.d                     |
+| R型  | 算术指令格式    | add\sub\sll\xor\srl\sra\or\and                               |
 | I型  | 加载&立即数算术 | lb\lh\lw\ld\lbu\lhu\lwu\addi\slli\xori\srli\srai\ori\andi\jalr |
 | S型  | 存储            | sb\sh\sw\sd                                                  |
 | SB型 | 条件分支格式    | beq\bne\blt\bge\bltu\begu                                    |
@@ -209,27 +210,26 @@ background: '/img/posts/01.jpg'
 
 ##### 2.2.1.1整数算术指令
 
-| 指令  | 示例              | 示例含义                | 描述                             |
-| ----- | ----------------- | ----------------------- | -------------------------------- |
-| addi  | addi a0, a1, 20   | a0 = a1 + 20            | 用于加一个常数                   |
-| slti  | slt a0, a1, 20    | a0 = a1 < 20 ? 1 : 0    | 比较a1与立即数，将结果给a0       |
-| andi  | andi a0, a1, 20   | a0 = a1 & 20            | 寄存器与常数按位与               |
-| ori   | ori a0, a1, 20    | a0 = a1 \| 20           | 寄存器与常数按位或               |
-| xori  | xori a0, a1, 20   | a0 = a1 ^ 20            | 寄存器与常数按位异或             |
-| slli  | slli a0, a1, 3    | a0 = a1 << 3            | 根据立即数给定位数左移           |
-| srli  | srli a0, a1, 3    | a0 = a1 >> 3            | 根据立即数给定位数右移           |
-| srai  | srai a0, a1, 3    | a0 = a1 >> 3            | 根据立即数给定位数算术右移       |
-| add   | add a0, a1, a2    | a0 = a1 + a2            | 加法指令                         |
-| slta  | slt a0, a1, a2    | a0 = a1 < a2 ? 1 : 0    | 比较a1与a2，将结果给a0           |
-| sltu  | sltu a0, a1, a2   | a0 = a1 < a2 ? 1 : 0    | 无符号比较a1与a2，将结果给a0     |
-| and   | and a0, a1, a2    | a0 = a1 & a2            | 三寄存器操作数：按位与           |
-| or    | or a0, a1, a2     | a0 = a1 \| a2           | 三寄存器操作数：按位或           |
-| xor   | xor a0, a1, a2    | a0 = a1 ^ a2            | 三寄存器操作数：按位异或         |
-| sll   | sll a0, a1, a2    | a0 = a1 << a2           | 按寄存器给定位数左移             |
-| srl   | srl a0, a1, a2    | a0 = a1 >> a2           | 按寄存器给定位数右移             |
-| sub   | sub a0, a1, a2    | a0 = a1 - a2            | 减法指令                         |
-| sra   | sra a0, a1, a2    | a0 = a1 >> a2           | 按寄存器给定位数算术右移         |
-| auipc | auipc a0, 0x12345 | a0 = pc + (0x12345<<12) | 将pc值偏移一个立即数加载到寄存器 |
+| 指令 | 示例            | 示例含义             | 描述                             |
+| ---- | --------------- | -------------------- | -------------------------------- |
+| addi | addi a0, a1, 20 | a0 = a1 + 20         | 用于加一个常数                   |
+| slti | slt a0, a1, 20  | a0 = a1 < 20 ? 1 : 0 | 比较a1与立即数，将bool结果给a0   |
+| andi | andi a0, a1, 20 | a0 = a1 & 20         | 寄存器与常数按位与               |
+| ori  | ori a0, a1, 20  | a0 = a1 \| 20        | 寄存器与常数按位或               |
+| xori | xori a0, a1, 20 | a0 = a1 ^ 20         | 寄存器与常数按位异或             |
+| slli | slli a0, a1, 3  | a0 = a1 << 3         | 根据立即数给定位数左移           |
+| srli | srli a0, a1, 3  | a0 = a1 >> 3         | 根据立即数给定位数右移           |
+| srai | srai a0, a1, 3  | a0 = a1 >> 3         | 根据立即数给定位数算术右移       |
+| add  | add a0, a1, a2  | a0 = a1 + a2         | 加法指令                         |
+| slta | slt a0, a1, a2  | a0 = a1 < a2 ? 1 : 0 | 比较a1与a2，将bool结果给a0       |
+| sltu | sltu a0, a1, a2 | a0 = a1 < a2 ? 1 : 0 | 无符号比较a1与a2，将bool结果给a0 |
+| and  | and a0, a1, a2  | a0 = a1 & a2         | 三寄存器操作数：按位与           |
+| or   | or a0, a1, a2   | a0 = a1 \| a2        | 三寄存器操作数：按位或           |
+| xor  | xor a0, a1, a2  | a0 = a1 ^ a2         | 三寄存器操作数：按位异或         |
+| sll  | sll a0, a1, a2  | a0 = a1 << a2        | 按寄存器给定位数左移             |
+| srl  | srl a0, a1, a2  | a0 = a1 >> a2        | 按寄存器给定位数右移             |
+| sub  | sub a0, a1, a2  | a0 = a1 - a2         | 减法指令                         |
+| sra  | sra a0, a1, a2  | a0 = a1 >> a2        | 按寄存器给定位数算术右移         |
 
 ##### 2.2.1.2.控制指令
 
@@ -255,27 +255,26 @@ background: '/img/posts/01.jpg'
 
 ###### 2.2.1.3.1.Load指令
 
-| 指令 | 示例            | 示例含义        | 描述                             |
-| ---- | --------------- | --------------- | -------------------------------- |
-| lb   | lb a0, 40(a1)   | a0 = mem[a1+40] | Load一个字节8bits到寄存器        |
-| lbu  | lbu a0, 40(a1)  | a0 = mem[a1+40] | Load一个无符号字节8bits到寄存器  |
-| lh   | lh a0, 40(a1)   | a0 = mem[a1+40] | Load一个半字16bits到寄存器       |
-| lhu  | lhu a0, 40(a1)  | a0 = mem[a1+40] | Load一个无符号半字16bits到寄存器 |
-| lw   | lw a0, 40(a1)   | a0 = mem[a1+40] | Load一个字32bits到寄存器         |
-| lwu  | lwu a0, 40(a1)  | a0 = mem[a1+40] | Load一个无符号字32bits到寄存器   |
-| ld   | ld a0, 40(a1)   | a0 = mem[a1+40] | Load一个双字64bits到寄存器       |
-| lui  | lui a0, 0x12345 | a0 = 0x12345000 | Load左移12位后的20位立即数       |
-| lr.d | lr.d a0, (a1)   | a0 = mem[a1]    | Load，原子交换的前半部分         |
+| 指令  | 示例              | 示例含义                | 描述                                   |
+| ----- | ----------------- | ----------------------- | -------------------------------------- |
+| lb    | lb a0, 40(a1)     | a0 = mem[a1+40]         | Load一个字节8bits到寄存器              |
+| lbu   | lbu a0, 40(a1)    | a0 = mem[a1+40]         | Load一个无符号字节8bits到寄存器        |
+| lh    | lh a0, 40(a1)     | a0 = mem[a1+40]         | Load一个半字16bits到寄存器             |
+| lhu   | lhu a0, 40(a1)    | a0 = mem[a1+40]         | Load一个无符号半字16bits到寄存器       |
+| lw    | lw a0, 40(a1)     | a0 = mem[a1+40]         | Load一个字32bits到寄存器               |
+| lwu   | lwu a0, 40(a1)    | a0 = mem[a1+40]         | Load一个无符号字32bits到寄存器         |
+| ld    | ld a0, 40(a1)     | a0 = mem[a1+40]         | Load一个双字64bits到寄存器             |
+| lui   | lui a0, 0x12345   | a0 = 0x12345000         | Load左移12位后的20位立即数             |
+| auipc | auipc a0, 0x12345 | a0 = pc + (0x12345<<12) | 立即数高20位与PC相加，将结果写入寄存器 |
 
 ###### 2.2.1.3.2.Store指令
 
-| 指令 | 示例              | 示例含义               | 描述                        |
-| ---- | ----------------- | ---------------------- | --------------------------- |
-| sb   | sb a0, 40(a1)     | mem[a1+40] = a0        | Store一个字节8bits到存储器  |
-| sh   | sh a0, 40(a1)     | mem[a1+40] = a0        | Store一个半字16bits到存储器 |
-| sw   | sw a0, 40(a1)     | mem[a1+40] = a0        | Store一个字32bits到存储器   |
-| sd   | sd a0, 40(a1)     | mem[a1+40] = a0        | Store一个双字64bits到存储器 |
-| sc.d | sc.d a0, a1, (a2) | mem[a2] = a1; a0 = 0/1 | Store；原子交换后半部分     |
+| 指令 | 示例          | 示例含义        | 描述                        |
+| ---- | ------------- | --------------- | --------------------------- |
+| sb   | sb a0, 40(a1) | mem[a1+40] = a0 | Store一个字节8bits到存储器  |
+| sh   | sh a0, 40(a1) | mem[a1+40] = a0 | Store一个半字16bits到存储器 |
+| sw   | sw a0, 40(a1) | mem[a1+40] = a0 | Store一个字32bits到存储器   |
+| sd   | sd a0, 40(a1) | mem[a1+40] = a0 | Store一个双字64bits到存储器 |
 
 ##### 2.2.1.4.内存指令
 
@@ -368,6 +367,48 @@ background: '/img/posts/01.jpg'
 
 ##### 2.2.3.F扩展指令（单精度浮点指令）
 
+| 指令      | 示例                     | 示例含义                | 描述                              |
+| --------- | ------------------------ | ----------------------- | --------------------------------- |
+| flw       | flw f0, 40(a0)           |                         |                                   |
+| fsw       | fsw f0, 40(a0)           |                         |                                   |
+| fmadd.s   | fmadd.s f0, f1, f2, f3   | f0 = f1 * f2 + f3       | 单精度浮点乘法后加法              |
+| fmsub.s   | fmsub.s f0, f1, f2, f3   | f0 = f1 * f2 - f3       | 单精度浮点乘法后减法              |
+| fnmadd.s  | fnmadd.s f0, f1, f2, f3  | f0 = f1 * f2 + f3       | 单精度浮点乘法后加法              |
+| fnmsub.s  | fnmsub.s f0, f1, f2 , f3 | f0 = f1 * f2 - f3       | 单精度浮点乘法后减法              |
+| fadd.s    | fadd.s f0, f1, f2        | f0 = f1 + f2            | 单精度浮点加法                    |
+| fsub.s    | fsub.s f0, f1, f2        | f0 = f1 - f2            | 单精度浮点减法                    |
+| fmul.s    | fmul.s f0, f1, f2        | f0 = f1 * f2            | 单精度浮点乘法                    |
+| fdiv.s    | fdiv.s f0, f1, f2        | f0 = f1 / f2            | 单精度浮点除法                    |
+| fsqrt.s   | fadd.s f0, f1            | f0 = √￣f1              | 单精度浮点平方根                  |
+| fsgnj.s   |                          |                         |                                   |
+| fsgnjn.s  |                          |                         |                                   |
+| fsgnjx.s  |                          |                         |                                   |
+| fmin.s    | fmin f0, f1, f2          | f0 = (f1 > f2) ? f2: f1 | 单精度浮点比较取最小值            |
+| fmax.s    | fmax f0, f1 f2           | f0 = (f1 > f2) ? f1: f2 | 单精度浮点比较取最大值            |
+| fcvt.w.s  | fcvt.w.s a0, f0          | a0 = (int32_t) f0       | 单精度浮点转32bits整形            |
+| fcvt.wu.s | fcvt.wu.s a0, f0         | a0 = (uint32_t) f0      | 单精度浮点转无符号32bits整形      |
+| fcvt.l.s  | fcvt.l.s a0, f0          | a0 = (int64_t) f0       | 单精度浮点转64bits整形            |
+| fcvt.lu.s | fcvt.lu.s a0, f0         | a0 = (uint64_t) f0      | 单精度浮点转无符号64bits整形      |
+| fcvt.s.w  | fcvt.s.w a0, f0          | f0 = (float32_t) a0     | 32bits整形转单精度浮点            |
+| fcvt.s.wu | fcvt.s.wu a0, f0         | f0 = (float32_t) a0     | 无符号32bits整形转单精度浮点      |
+| fcvt.s.l  | fcvt.s.l a0, f0          | f0 = (float64_t) a0     | 64bits整形转单精度浮点            |
+| fcvt.s.lu | fcvt.s.lu a0, f0         | f0 = (float64_t) a0     | 无符号64bits整形转单精度浮点      |
+| fmv.x.w   |                          |                         |                                   |
+| fmv.w.x   |                          |                         |                                   |
+| feq.s     | feq.s a0, f1, f2         | a0 = (f0==f1) ? 1 : 0   | 单精度浮点比较并将bool值给寄存器  |
+| flt.s     | flt.s a0, f1, f2         | a0 = (f0<f1) ? 1 : 0    |                                   |
+| fle.s     | fle.s a0, f1, f2         | a0 = (f0<=f1) ? 1 : 0   | 单精度浮点加法                    |
+| fclass.s  | fclass.s a0, f0          | f0 is type, a0 = type   | 单精度浮点分类，详情见[批注1](#1) |
+| fcmp.s    |                          |                         |                                   |
+
+<span id="1">批注[1]</span>
+
+<ul>
+<li  markdown="1">
+![fclass](/img/posts/fclass.png)
+</li>
+</ul>
+
 ##### 2.2.4.D扩展指令（双精度浮点指令）
 
 ##### 2.2.5.Q扩展指令（四倍精度浮点指令）
@@ -389,3 +430,13 @@ background: '/img/posts/01.jpg'
 ##### 2.2.13.N扩展指令（用户中断指令）
 
 ##### 2.2.14.G通用指令（包含I、M、A、F、D指令）
+
+## 参考资料
+
+- 伯克利大学[riscv reference card](https://inst.eecs.berkeley.edu/~cs61c/sp22/pdfs/resources/reference-card.pdf)
+
+- [RISCV ISA Manual](https://github.com/riscv/riscv-isa-manual/releases)
+- [RISCV ASM Manual](https://github.com/riscv-non-isa/riscv-asm-manual/blob/master/riscv-asm.md)
+- [RISCV C API Doc](https://github.com/riscv-non-isa/riscv-c-api-doc/blob/master/riscv-c-api.md)
+
+[1]: 
