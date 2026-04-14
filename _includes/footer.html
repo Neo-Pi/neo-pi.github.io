@@ -1,0 +1,17 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; {{ site.author }} {{ 'now' | date: "%Y" }}</span>
+    <div class="footer-links">
+      {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      {% endif %}
+      {% if site.email %}
+      <a href="mailto:{{ site.email | encode_email }}">Email</a>
+      {% endif %}
+      {% if site.twitter_username %}
+      <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
+      {% endif %}
+      <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+    </div>
+  </div>
+</footer>

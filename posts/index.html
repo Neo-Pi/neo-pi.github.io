@@ -1,0 +1,27 @@
+---
+layout: page
+title: Posts
+---
+
+<ul class="post-list">
+  {% for post in paginator.posts %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a>
+    <span class="meta">{% include read_time.html content=post.content %}</span>
+  </li>
+  {% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+<nav class="pager" aria-label="Pagination">
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">← Newer</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older →</a>
+  {% endif %}
+</nav>
+{% endif %}

@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<main>
+  <div class="home-intro">
+    <h1>{{ site.title }}</h1>
+    {% if site.description %}
+    <p class="home-tagline">{{ site.description }}</p>
+    {% endif %}
+    <p class="home-aside">新文章靠灵感，旧文章靠搜索；RSS 在页脚，GitHub 在隔壁。</p>
+  </div>
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts limit: 24 %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a>
+      <span class="meta">{% include read_time.html content=post.content %}</span>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="home-more"><a href="{{ "/posts" | relative_url }}">刨完整目录 →</a></p>
+</main>
